@@ -1,0 +1,22 @@
+.sidebar{
+    background-color: #1f2a40;
+    height:100vh;
+   
+    padding: 1%;
+    
+}
+.topper{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+button{
+    background-color: transparent;
+    border: none;
+    color:White;
+}
+li{
+   list-style-type: none;
+}

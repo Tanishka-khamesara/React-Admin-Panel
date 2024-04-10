@@ -1,0 +1,10 @@
+.App{
+  margin: 0px;
+  box-sizing: border-box;
+  padding-top: 0%;
+  background-color: #141b2d;
+}
+.boxes{
+  display:flex;
+ gap:20px;
+}
