@@ -4,18 +4,19 @@ import './App.css';
 import Layout from './Components/Layout';
 import Home from './Components/Home';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { UserContext } from './Context/Context';
-import { useState } from 'react';
-import PieChart from './Components/PieChart';
+import DataContext from './Context/Context';
+import PieChart from './Components/Sidebar/PieChart';
 import Invoices from './Components/Sidebar/Invoices';
-
+import ManageTeams from './Components/Sidebar/ManageTeams';
+import ProfileForm from './Components/Sidebar/ProfileForm';
+import Contacts from './Components/Sidebar/ContactsInfo';
+import LineChart from './Components/Sidebar/LineChart';
+import FAQ from './Components/Sidebar/FaqPage';
+import Calendar from './Components/Sidebar/Calendar';
+import BarChart from './Components/Sidebar/BarChart'
+import GeographyChart from './Components/Sidebar/GeographyChart'
 function App() {
-  const [colors, setColors] = useState({
-    forbgBlue: "#141b2d",
-    foricons: "#3da58a",
-    forwordsgreen: "#46b59b",
-    Searchbox:"#1f2a40"
-  });
+  
   const Router = createBrowserRouter(
     [
       {
@@ -25,22 +26,58 @@ function App() {
           {
             path: "/",
             element:<Home/>
-          }, {
-            path: "/PieChart",
-            element:<PieChart/>
-          }, {
+          },
+          {
+            path: "/ManageTeam",
+            element:<ManageTeams/>
+          }, 
+          {
+            path: "/Contacts",
+            element:<Contacts/>
+          },
+          {
             path: "/Invoices",
             element:<Invoices/>
-          }
+          },
+          {
+            path: "/ProfileForm",
+            element:<ProfileForm/>
+          },
+          {
+            path: "/Calendar",
+            element:<Calendar/>
+          },
+          {
+            path: "/FAQ",
+            element:<FAQ/>
+          },
+          {
+            path: "/BarChart",
+            element:<BarChart/>
+          },
+          {
+            path: "/PieChart",
+            element:<PieChart/>
+          },
+          {
+            path: "/LineChart",
+            element:<LineChart/>
+          },
+          {
+            path: "/GeographyChart",
+            element:<GeographyChart/>
+          },
         ]
     }
   ])
   return (
     <div className="App">
-      <UserContext.Provider value={colors}>
-        <RouterProvider router={Router}></RouterProvider>
+      <DataContext>
+      <RouterProvider router={Router}></RouterProvider>
+      </DataContext>
         
-   </UserContext.Provider>
+       
+   
     </div>
   );
 }

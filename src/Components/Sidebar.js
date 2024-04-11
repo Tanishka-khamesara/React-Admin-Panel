@@ -11,32 +11,32 @@ function Sidebar() {
             <hr></hr>
             <div>
                 <ul>
-                    <li><i class="material-icons">dashboard</i>Dashboard</li>
+                <li> <Link to="/">DashBoard</Link></li>    
                 </ul>
             </div>
             <div>
                 <h5>Data</h5>
                 <ul>
-                    <li><button>Manage Teams</button></li>
-                    <li><button>Contacts Information</button></li>
+                <li> <Link to="/ManageTeam">Manage Team</Link></li>    
+                <li> <Link to="/Contacts">Contact Information</Link></li>    
                     <li> <Link to="/Invoices">Invoices Balances</Link></li>    
                 </ul>
             </div>
             <div>
                 <h5>Pages</h5>
                 <ul>
-                    <li><button>Profile Form</button></li>
-                    <li><button>Calendar</button></li>
-                    <li><button>FAQ Page</button></li>    
+                <li> <Link to="/ProfileForm">Profile Form</Link></li>    
+                <li> <Link to="/Calendar">Calendar</Link></li>    
+                <li> <Link to="/FAQ">FAQ Page</Link></li>     
                 </ul>
             </div>
             <div>
                 <h5>Charts</h5>
                 <ul>
-                    <li><button>Bar Chart</button></li>
-                    <li><button>Pie Chart</button></li>
-                    <li><button>Line Chart</button></li> 
-                    <li><button>Geography Chart</button></li> 
+                    <li> <Link to="/BarChart">Bar Chart</Link></li>    
+                    <li> <Link to="/PieChart">Pie Chart</Link></li>    
+                    <li> <Link to="/LineChart">Line Chart</Link></li>    
+                    <li> <Link to="/GeographyChart">Geography Chart</Link></li>    
                 </ul>
             </div>
         </div>
