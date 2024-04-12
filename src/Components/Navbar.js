@@ -11,7 +11,6 @@ function Navbar() {
         if (mode == true) {
             setColors({
                 forboxBlue:"#e0e0e0",
-                foricons: 'white',
                 forwordsgreen: "#70d8bd",
                 forbgBlue: "white",
                 foricons: "#3da58a",
@@ -27,7 +26,7 @@ function Navbar() {
                 foricons: "#3da58a",
                 forwordsgreen: "#46b59b",
                 Searchbox: "#1f2a40",
-                forNavicons: "white",
+                forNavicons: "#3da58a",
                 forFont:"white",
             })
             setMode(true);

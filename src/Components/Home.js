@@ -2,7 +2,7 @@ import { UserContext } from "../Context/Context";
 import { UseContext, useContext } from "react";
 import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
-import { LineChart,AreaChart, Area,Line, Legend, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart,AreaChart, Area,Line, Legend, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, BarChart } from 'recharts';
 import React, { PureComponent } from 'react';
 import { mockTransactions } from "./Details/Content";
 
@@ -127,7 +127,8 @@ function Home() {
                     })
                 }
         </div>
-       </div>
+        </div>
+        
         </>
     )
 }
