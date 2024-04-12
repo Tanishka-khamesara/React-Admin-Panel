@@ -14,9 +14,12 @@ import LineChart from './Components/Sidebar/LineChart';
 import FAQ from './Components/Sidebar/FaqPage';
 import Calendar from './Components/Sidebar/Calendar';
 import BarChart from './Components/Sidebar/BarChart'
-import GeographyChart from './Components/Sidebar/GeographyChart'
+import GeographyChart from './Components/Sidebar/GeographyChart';
+import { UserContext } from './Context/Context';
+import { useContext } from 'react';
 function App() {
-  
+  const ctx = useContext(UserContext);
+  const colorCtx = ctx.colors;
   const Router = createBrowserRouter(
     [
       {
@@ -71,7 +74,7 @@ function App() {
     }
   ])
   return (
-    <div className="App">
+    <div className="App" >
       <DataContext>
       <RouterProvider router={Router}></RouterProvider>
       </DataContext>

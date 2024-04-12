@@ -1,5 +1,5 @@
 .sidebar{
-    background-color: #1f2a40;
+
     height:100vh;
    
     padding: 1%;
@@ -17,6 +17,9 @@ button{
     border: none;
     color:White;
 }
-li{
-   list-style-type: none;
+
+.sidebar ul li{
+    list-style-type: none;
+    color: white;
+    
 }

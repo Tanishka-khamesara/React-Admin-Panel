@@ -4,17 +4,20 @@ import { Content } from "../Components/Details/Content";
 export const UserContext = createContext({});
 
 const DataContext = ((props) => {
+    const [mode, setMode] = useState(false);
     const [colors, setColors] = useState({
+        forboxBlue:"#1F2A40",
         forbgBlue: "#141b2d",
         foricons: "#3da58a",
         forwordsgreen: "#46b59b",
-        Searchbox:"#1f2a40"
+        Searchbox: "#1f2a40",
+        forFont:"white",
     });
     const [details, setDetails] = useState(Content);
     // console.log(details);
     return (
         <>
-            <UserContext.Provider value={{ colors, setColors,details,setDetails}}>
+            <UserContext.Provider value={{ colors, setColors,details,setDetails,mode,setMode}}>
                 {props.children}
         </UserContext.Provider>
         </>

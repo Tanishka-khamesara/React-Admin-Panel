@@ -11,7 +11,8 @@ export const Content = [
         zipCode: "10001",
         registrarId: 123512,
         cost: "21.24",
-      date: "03/12/2022",
+    date: "03/12/2022",
+      status:'active',
     },
     {
       id: 2,
@@ -26,6 +27,7 @@ export const Content = [
         registrarId: 123512,
         cost: "1.24",
       date: "06/15/2021",
+      status:'pending',
     },
     {
       id: 3,
@@ -40,6 +42,7 @@ export const Content = [
         registrarId: 4132513,
         cost: "11.24",
       date: "05/02/2022",
+      status:'active',
     },
     {
       id: 4,
@@ -53,7 +56,8 @@ export const Content = [
         zipCode: "15551",
         registrarId: 123512,
         cost: "80.55",
-        date: "03/21/2022",
+      date: "03/21/2022",
+      status:'pending',
     },
     {
       id: 5,
@@ -68,6 +72,7 @@ export const Content = [
         registrarId: 123512,
         cost: "1.24",
       date: "01/12/2021",
+      status:'active',
     },
     {
       id: 6,
@@ -82,6 +87,7 @@ export const Content = [
         registrarId: 123512,
         cost: "63.12",
       date: "11/02/2022",
+      status:'pending',
     },
     {
       id: 7,
@@ -96,6 +102,7 @@ export const Content = [
         registrarId: 123512,
         cost: "52.42",
       date: "02/11/2022",
+      status:'active',
     },
     {
       id: 8,
@@ -110,6 +117,7 @@ export const Content = [
         registrarId: 512315,
         cost: "21.24",
       date: "05/02/2021",
+      status:'pending',
     },
     {
       id: 9,
@@ -124,6 +132,7 @@ export const Content = [
         registrarId: 928397,
         cost: "23.24",
       date: "08/02/2021",
+      status:'active',
     },
     {
         id: 10,
@@ -137,6 +146,7 @@ export const Content = [
         registrarId: 533215,
         cost: "29.24",
       date: "12/02/2021",
+      status:'pending',
     },
     {
         id: 11,
@@ -150,6 +160,7 @@ export const Content = [
         registrarId: 92197,
         cost: "50.00",
       date: "9/02/2021",
+      status:'active',
       },
   ];
  export const mockTransactions = [

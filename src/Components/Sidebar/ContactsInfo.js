@@ -1,6 +1,9 @@
+import Invoices from './Invoices'
+
 function Contacts() {
     return (
-        <h1>Contacts</h1>
+        <Invoices/>
+    
     )
 }
 export default Contacts;

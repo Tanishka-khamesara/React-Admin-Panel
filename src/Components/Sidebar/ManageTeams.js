@@ -1,33 +1,70 @@
 import { UserContext } from "../../Context/Context";
 import {  useContext, useState } from "react";
+import * as React from 'react';
+import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { Content } from '../Details/Content';
+const columns: GridColDef[] = [
+    { field: 'id', headerName: 'ID', width: 90 ,},
+    { field: 'name', headerName: 'First name', width: 170, },
+    { field: 'email', headerName: 'Email Id', width: 190, },
+    {
+      field: 'phone',
+      headerName: 'Phone number',
+      type: 'number',
+        width: 120,
+        
+    },
+    {
+        field: 'cost',
+        headerName: 'Cost',
+        type: 'number',
+        width: 100,
+        
+      },
+    
+        {
+            field: 'status',
+            headerName: 'Status',
+            width: 160,
+            
+                
+    },
 
+  ];
+const rows = Content;
 function ManageTeams() {
     const Ctx = useContext(UserContext);
     const userCtx = Ctx.colors;
     const detailCtx = Ctx.details;
-   
+
+    const CustomDataGrid = ({ className, ...rest }) => (
+        <div className={className} style={{ backgroundColor: 'white' }}>
+            <DataGrid {...rest} />
+        </div>
+    );
+
     return (
-        <div style={{margin:'20px'}}>
-            <div style={{lineHeight:'12px',marginTop:'20px'}}>
-                <h1>TEAM</h1>
-                <p style={{color:userCtx.forwordsgreen}}>Managing the Team Members</p>
+        <div style={{ backgroundColor: 'white' }}>
+            <h1 style={{ margin: "2%",color: userCtx.forwordsgreen }}>TEAM</h1>
+            <p style={{ color: userCtx.forwordsgreen, margin: "2%" }}>Managing the Team Members</p>
+            <div style={{ height: '70vh', width: '96%', margin: 'auto', color: userCtx.forFont }}>
+                <DataGrid
+                    rows={Content}
+                    columns={columns}
+                    components={{ MuiDataGrid: CustomDataGrid }}
+                    initialState={{
+                        pagination: {
+                            paginationModel: { page: 0, pageSize: 5 },
+                        },
+                    }}
+                    pageSizeOptions={[5, 10]}
+                    checkboxSelection
+                />
             </div>
-            <div>
-                <table>
-                    <thead id="ids">Id</thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                        </tr>
-                        <tr>
-                            <button style={{backgroundColor:"red",}}>hide</button>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+        </div>
+    );
           
-      </div>
-    )
+     
+    
 }
 export default ManageTeams;

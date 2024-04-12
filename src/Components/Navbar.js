@@ -1,15 +1,49 @@
+import { UserContext } from "../Context/Context";
+import { useContext } from "react";
+
 function Navbar() {
+    const ctx = useContext(UserContext);
+    const colors = ctx.colors;
+    const setColors = ctx.setColors;
+    const mode = ctx.mode;
+    const setMode = ctx.setMode;
+    const changeMode = (() => {
+        if (mode == true) {
+            setColors({
+                forboxBlue:"#e0e0e0",
+                foricons: 'white',
+                forwordsgreen: "#70d8bd",
+                forbgBlue: "white",
+                foricons: "#3da58a",
+                forNavicons: "black",
+                forFont:"black",
+            })
+            setMode(false);
+        }
+        else {
+            setColors({
+                forboxBlue:"#1F2A40",
+                forbgBlue: "#141b2d",
+                foricons: "#3da58a",
+                forwordsgreen: "#46b59b",
+                Searchbox: "#1f2a40",
+                forNavicons: "white",
+                forFont:"white",
+            })
+            setMode(true);
+        }
+    })
     return (
         <div style={{display:'flex',justifyContent:'space-between', height: "28px",margin:"18px",alignItems: 'center'}}>
-            <div style={{ display: "flex", alignItems: 'center', backgroundColor: "#1F2A40"}}>
+            <div style={{ display: "flex", alignItems: 'center', backgroundColor: colors.forboxBlue}}>
                 <input type="text" placeholder="Search" style={{backgroundColor:'transparent',border:"none",outline:'none',}} />
                 <button><i className="material-icons">search</i></button>
             </div>
-            <div>
-                <i className="material-icons">dark_mode</i>
-                <i className="material-icons">notifications</i>
-                <i className="material-icons">settings</i>
-                <i className="material-icons">person</i>
+            <div >
+                <button onClick={changeMode}><i className="material-icons" style={{color:colors.forNavicons}}>dark_mode</i></button>
+                <i className="material-icons" style={{color:colors.forNavicons}}>notifications</i>
+                <i className="material-icons" style={{color:colors.forNavicons}}>settings</i>
+                <i className="material-icons" style={{color:colors.forNavicons}}>person</i>
                 
             </div>
         </div>

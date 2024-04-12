@@ -4,6 +4,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 import { LineChart,AreaChart, Area,Line, Legend, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import React, { PureComponent } from 'react';
+import { mockTransactions } from "./Details/Content";
 
 function Home() {
     const DataNew = [
@@ -49,9 +50,10 @@ function Home() {
     const Ctx = useContext(UserContext);
     const userCtx = Ctx.colors;
     // console.log(userCtx.colors);
+    console.log(mockTransactions);
     return (<>
       <div style={{margin:'20px'}}>
-            <div style={{lineHeight:'12px',marginTop:'20px'}}>
+            <div style={{lineHeight:'12px',marginTop:'40px'}}>
                 <h1>DASHBOARD</h1>
                 <p style={{color:userCtx.forwordsgreen}}>Welcome to your dashboard</p>
             </div>
@@ -59,7 +61,7 @@ function Home() {
                 {
                     DataNew.map((val) => {
                         return (
-                            <div style={{ backgroundColor: '#1F2A40',width:'20%',padding:"20px",lineHeight:'2px',display:'flex',justifyContent:'space-between' }}>
+                            <div style={{ backgroundColor: userCtx.forboxBlue,width:'20%',padding:"20px",lineHeight:'2px',display:'flex',justifyContent:'space-between' }}>
                                 <div >
                                 <i className="material-icons" style={{ color: userCtx.foricons }}>{val.icon}</i>
                                 <h4>{val.numbers}</h4>
@@ -76,11 +78,12 @@ function Home() {
                 }
               
             </div>
-            {/* chart */}
         </div>
+        <div style={{display:"flex"}}>
+                 {/* chart */}
         <div className='chart'>
             <AreaChart width={650} height={300} data={data}
-        margin={{ top: 2, right: 30, left: 22, bottom: 0 }}>
+        margin={{ top: 2, right: 30, left: 0, bottom: 0 }}>
         <defs>
           <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
             <stop offset="5%" stopColor="#8884d8" stopOpacity={0.8}/>
@@ -92,7 +95,7 @@ function Home() {
           </linearGradient>
         </defs>
         <XAxis dataKey="name" />
-        
+        <YAxis />
         <CartesianGrid strokeDasharray="3 3" />
         <Tooltip />
         <Area type="monotone" dataKey="Total" stroke="#8884d8" fillOpacity={1} fill="url(#colorUv)" />
@@ -100,6 +103,31 @@ function Home() {
             </AreaChart>
             
         </div>
+        {/* transictions */}
+        <div style={{display:'flex',flexDirection:'column',gap:'12px',width:'34%',height:"280px",overflow:"auto",}} className="scrollerPart">
+            <div style={{backgroundColor: userCtx.forboxBlue}}>
+                <h3 style={{marginLeft:'10px'}}>Recent Transactions</h3>
+            </div>
+            {
+                mockTransactions.map((val) => {
+                    return (
+                        <div style={{display:'flex',justifyContent:"space-between",backgroundColor: userCtx.forboxBlue,padding:'3px 10px'}}>
+                            <div style={{lineHeight:'4px'}}>
+                                <p>{val.txId}</p>
+                                <p>{val.user}</p>
+                            </div>
+                            <div>
+                                <p>{val.date }</p>
+                            </div>
+                            <div >
+                                <p style={{ backgroundColor: userCtx.forwordsgreen, padding:'2px'}}>${val.cost}</p>
+                            </div>
+                        </div>
+                   )
+                    })
+                }
+        </div>
+       </div>
         </>
     )
 }
