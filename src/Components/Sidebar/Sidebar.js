@@ -38,8 +38,7 @@ function Sidebar() {
                 <ul>
                 <li> <Link to="/BarChart"><i className="material-icons">bar_chart</i>Bar Chart</Link></li>
                     <li> <Link to="/PieChart"><i className="material-icons">pie_chart</i>Pie Chart</Link></li>    
-                    <li> <Link to="/LineChart"><i className="material-icons">stacked_line_chart</i>Line Chart</Link></li>    
-                    <li> <Link to="/GeographyChart"><i className="material-icons">person</i>Geography Chart</Link></li> 
+                    <li> <Link to="/LineChart"><i className="material-icons">stacked_line_chart</i>Line Chart</Link></li>     
                     
                 </ul>
             </div>

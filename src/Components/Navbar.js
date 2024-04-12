@@ -35,7 +35,7 @@ function Navbar() {
     })
     return (
         <div style={{display:'flex',justifyContent:'space-between', height: "28px",margin:"18px",alignItems: 'center'}}>
-            <div style={{ display: "flex", alignItems: 'center', backgroundColor: colors.forboxBlue}}>
+            <div style={{ display: "flex", alignItems: 'center', backgroundColor: colors.forboxBlue,height: "40px"}}>
                 <input type="text" placeholder="Search" style={{backgroundColor:'transparent',border:"none",outline:'none',}} />
                 <button><i className="material-icons">search</i></button>
             </div>
