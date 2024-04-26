@@ -1,16 +1,18 @@
 import './Sidebar.css';
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 import { UserContext } from '../../Context/Context';
 import { useContext, useState } from 'react';
+import SignUp from '../../SignUp';
 
 function Sidebar() {
     const ctx = useContext(UserContext);
     const useCtx = ctx.color;
-    
+    const name = ctx.name;
+    const navigate=useNavigate();
     return (
         <div class="sidebar" >
             <div class="topper">
-                <h2>ADMINIS</h2>
+                <button onClick={() => { navigate("/SignUp") }} style={{backgroundColor:"#3da58a",padding:"10px",marginLeft:"120px"}}>{name}</button>
             </div>
             <div>
                 <ul>

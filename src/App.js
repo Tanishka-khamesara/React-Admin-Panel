@@ -17,11 +17,15 @@ import BarChart from './Components/Sidebar/BarChart'
 import GeographyChart from './Components/Sidebar/GeographyChart';
 import { UserContext } from './Context/Context';
 import { useContext } from 'react';
+import SignUp from './SignUp';
 function App() {
   const ctx = useContext(UserContext);
   const colorCtx = ctx.colors;
   const Router = createBrowserRouter(
-    [
+    [{
+      path: "SignUp",
+      element:<SignUp/>
+    },
       {
         path: "/",
         element: <Layout />,
@@ -70,6 +74,7 @@ function App() {
             path: "/GeographyChart",
             element:<GeographyChart/>
           },
+          
         ]
     }
   ])

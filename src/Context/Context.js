@@ -14,10 +14,11 @@ const DataContext = ((props) => {
         forFont:"white",
     });
     const [details, setDetails] = useState(Content);
+    const [name, setName] = useState("Sign up");
     // console.log(details);
     return (
         <>
-            <UserContext.Provider value={{ colors, setColors,details,setDetails,mode,setMode}}>
+            <UserContext.Provider value={{ colors, setColors,details,setDetails,mode,setMode,name,setName}}>
                 {props.children}
         </UserContext.Provider>
         </>
